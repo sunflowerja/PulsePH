@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+  <form id="captcha-form">
+    <div class="g-recaptcha" 
+         data-sitekey="YOUR_SITE_KEY" 
+         data-callback="sendToken"></div>
+  </form>
+  <script>
+    function sendToken(token) {
+      window.ReactNativeWebView.postMessage(token);
+    }
+  </script>
+</body>
+</html>
